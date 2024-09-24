@@ -23,7 +23,7 @@ case "$1" in
                 )
         esac
 
-        sudo apt-get update
+          apt-get update
 
         # If jackd2 is installed as per dpkg database, install libjack-jackd2-dev.
         # This avoids a package deadlock, resulting in jackd2 being removed, and jackd1 being installed,
@@ -31,21 +31,21 @@ case "$1" in
         # jackd dev library, so let's give it one..
         if [ "$(dpkg-query -W -f='${Status}' jackd2 2>/dev/null | grep -c "ok installed")" -eq 1 ];
         then
-            sudo apt-get install libjack-jackd2-dev;
+              apt-get install libjack-jackd2-dev;
         fi
 
         # Install a faster linker. Prefer mold, fall back to lld
         if apt-cache show mold 2>%1 >/dev/null;
         then
-            sudo apt-get install -y --no-install-recommends mold
+              apt-get install -y --no-install-recommends mold
         else
             if apt-cache show lld 2>%1 >/dev/null;
             then
-                sudo apt-get install -y --no-install-recommends lld
+                  apt-get install -y --no-install-recommends lld
             fi
         fi
 
-        sudo apt-get install -y --no-install-recommends -- \
+          apt-get install -y --no-install-recommends -- \
             ccache \
             cmake \
             clazy \
