@@ -82,7 +82,12 @@ Use the container-id from above command & run the container using below command 
     $ cd mixx
 
 You can find the code in mixx directory. 
-Now follow [Building Mixxx] section to build the code.
+Now follow below commands to build the code.
+
+    $ mkdir build
+    $ cd build
+    $ cmake ..
+    $ cmake --build .
 
 ## Documentation
 
