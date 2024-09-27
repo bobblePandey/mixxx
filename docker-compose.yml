@@ -1,0 +1,10 @@
+version: '3.3'
+
+services:
+  mixx_service:
+    image: mixx-docker        # Replace 'mixx' with your actual image name
+    volumes:
+      - ./:/app/mixx  # Mounting the volume to a path in the container
+    ports:
+      - "8080:8080"  # Expose ports if necessary
+    command: tail -f /dev/null  # Keep the container running
