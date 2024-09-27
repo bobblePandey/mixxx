@@ -58,6 +58,32 @@ To build Mixxx, run
 There should now be a `mixxx` executable in the current directory that you can
 run. Alternatively, can generate a package using `cpack`.
 
+## Docker build
+Refer this for docker installation : [https://docs.docker.com/engine/install/ubuntu/]
+
+    $ apt install docker-ce
+    $ apt install docker-compose-plugin
+
+Build the environment using below command :
+
+    $ docker build -t mixx-docker .
+
+Now run the container using following command
+
+    $ docker-compose up -d
+    
+To view the containers running, use following command
+
+    $ docker ps
+
+Use the container-id from above command & run the container using below command :
+
+    $ docker exec -it #container-id
+    $ cd mixx
+
+You can find the code in mixx directory. 
+Now follow [Building Mixxx] section to build the code.
+
 ## Documentation
 
 For help using Mixxx, there are a variety of options:
